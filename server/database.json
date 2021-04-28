@@ -1,0 +1,31 @@
+{
+  "distance": [
+    {
+      "len": 3,
+      "id": 1
+    }
+  ],
+  "feild2": [
+    3,
+    4,
+    14
+  ],
+  "cities": [
+    {
+      "name": [
+        "tokyo"
+      ],
+      "population": [
+        1000
+      ]
+    },
+    {
+      "name": [
+        "newyork"
+      ],
+      "population": [
+        9
+      ]
+    }
+  ]
+}
