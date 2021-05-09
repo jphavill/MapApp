@@ -1,0 +1,8 @@
+<input #lngminbox type="number" [(ngModel)]="boxMinLng" required>
+<input #lngmaxbox type="number" [(ngModel)]="boxMaxLng" required>
+<input #latminbox type="number" [(ngModel)]="boxMinLat" required>
+<input #latmaxbox type="number" [(ngModel)]="boxMaxLat" required>
+<button type="button" class="btn btn-number" (click)= "updateMap()">
+  <span>submit</span>
+</button>
+

@@ -1,0 +1,17 @@
+<div>
+  <div style="display: block">
+    <canvas baseChart
+            [datasets]="streakChartData"
+            [labels]="streakChartLabels"
+            [options]="streakChartOptions"
+            [legend]="streakChartLegend"
+            [chartType]="streakChartType"></canvas>
+  </div>
+  <input #textbox type="text" [(ngModel)]="textValue" required>
+  <button type="button" class="btn btn-number" (click)= "saveSleep()">
+    <span>submit</span>
+  </button>
+  <button type="button" class="btn btn-number" (click)= "retrieveSleep()">
+    <span>retrieve</span>
+  </button>
+</div>
