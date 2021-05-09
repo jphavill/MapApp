@@ -1,29 +1,24 @@
-<div class="toolbar">
+<div class="container">
+  <div class="ChartStuff">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/maps">Maps</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/streak-chart">Streak Chart</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/circle-chart">Circle Chart</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/Weight-chart">Weight Chart</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/Sleep-chart">Sleep Chart</a>
+      </li>
+    </ul>
+    <router-outlet></router-outlet>
+  </div>
 
 </div>
 
-<div class="content">
-  <div class="map-tabs">
-    <input type="hidden" #selection>
-    <div class="projection-tab tab-small tab" (click)="selection.value = 'mercator'">
-      <span>Mercator</span>
-    </div>
-    <div class="projection-tab tab-small tab" (click)="selection.value = 'albers'">
-      <span>Albers</span>
-    </div>
-    <div class="projection-tab tab-small tab" (click)="selection.value = 'bonne'">
-      <span>Bonne</span>
-    </div>
-    <div class="projection-tab tab-small tab" (click)="selection.value = 'Stereo'">
-      <span>Stereo</span>
-    </div>
-  </div>
-
-  <div class="map-image" [ngSwitch]="selection.value">
-    <img *ngSwitchCase="'mercator'" src="assets/images/mercator.png">
-<!--    <img *ngSwitchCase="'albers'" src="assets/img/bonne.png">-->
-    <img *ngSwitchCase="'bonne'" src="assets/images/bonne.png">
-<!--    <img *ngSwitchCase="'Stereo'">-->
-  </div>
-  <app-distance-display></app-distance-display>
-</div>

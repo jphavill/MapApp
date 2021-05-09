@@ -1,0 +1,14 @@
+<div>
+  <div style="display: block">
+    <canvas class="border" baseChart #mapChart="base-chart"
+            [datasets]="circleChartData"
+            [options]="circleChartOptions"
+            [legend]="circleChartLegend"
+            [chartType]="circleChartType"
+            (chartClick)="chartClicked($event)"></canvas>
+  </div>
+  <button type="button" class="btn btn-number" (click)= "display10()">
+    <span>Pull Coordinates</span>
+  </button>
+</div>
+

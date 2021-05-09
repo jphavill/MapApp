@@ -1,0 +1,41 @@
+<div class="MapStuff">
+  <div class="map-tabs">
+    <input type="hidden" #selection>
+    <div class="projection-tab tab-small tab" (click)="selection.value = 'mercator'">
+      <span>Mercator</span>
+    </div>
+    <div class="projection-tab tab-small tab" (click)="selection.value = 'albers'">
+      <span>Albers</span>
+    </div>
+    <div class="projection-tab tab-small tab" (click)="selection.value = 'bonne'">
+      <span>Bonne</span>
+    </div>
+    <div class="projection-tab tab-small tab" (click)="selection.value = 'stereo'">
+      <span>Stereo</span>
+    </div>
+  </div>
+
+  <div class="map-image" [ngSwitch]="selection.value">
+<!--    <img *ngSwitchDefault src="assets/images/mercator.png" class="img-fluid">-->
+    <div *ngSwitchDefault >
+      <app-circle-chart #main   [convert]="mercatorConvertor"></app-circle-chart>
+      <app-move-map (triggerUpdate)="main.updateScale()"></app-move-map>
+      <app-lat-lng-input (triggerRedraw)="main.display10()"></app-lat-lng-input>
+    </div>
+    <div *ngSwitchCase="'albers'" >
+      <app-circle-chart #main   [convert]="albersConvertor"></app-circle-chart>
+      <app-move-map (triggerUpdate)="main.updateScale()"></app-move-map>
+      <app-lat-lng-input (triggerRedraw)="main.display10()"></app-lat-lng-input>
+    </div>
+    <div *ngSwitchCase="'bonne'" >
+      <app-circle-chart #main   [convert]="bonneConvertor"></app-circle-chart>
+      <app-move-map (triggerUpdate)="main.updateScale()"></app-move-map>
+      <app-lat-lng-input (triggerRedraw)="main.display10()"></app-lat-lng-input>
+    </div>
+    <div *ngSwitchCase="'stereo'" >
+      <app-circle-chart #main   [convert]="stereoConvertor"></app-circle-chart>
+      <app-move-map (triggerUpdate)="main.updateScale()"></app-move-map>
+      <app-lat-lng-input (triggerRedraw)="main.display10()"></app-lat-lng-input>
+    </div>
+  </div>
+</div>
